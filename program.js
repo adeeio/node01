@@ -7,6 +7,7 @@ process.stdout.write('To exit application, type in - /exit\n');
 process.stdin.on('readable', function () {
 
     var input = process.stdin.read();
+    console.log(input);
     if (input !== null) {
         var instruction = input.toString().trim();
         var env = process.env;
@@ -27,8 +28,6 @@ process.stdin.on('readable', function () {
         }
 
     }
-    else {
-        process.stderr.write('Wrong instruction!\n');
-    }
+
 
 });
